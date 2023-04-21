@@ -1,0 +1,76 @@
+.App {
+  text-decoration: none;
+  position: relative;
+}
+
+.text-primary {
+  text-align: center;
+  font-size: 12px;
+}
+
+.header {
+  background-color: aqua;
+  padding:5px;
+  width: 100%;
+  position: fixed;
+
+}
+
+.header-list {
+  list-style: none;
+}
+
+.header-list li {
+  display: inline-block;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+
+.header-list li:last-child {
+  margin-right: 0;
+}
+
+.student-list {
+  margin: 0px 50px;
+  padding-top: 80px;
+}
+
+.student-list .table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.student-list td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 5px;
+}
+
+.pagination {
+  list-style: none;
+  margin-right: 0;
+}
+
+.pagination-item {
+  display: inline-block;  
+  margin: 10px
+}
+
+.pagination-item a {
+  text-decoration: none;
+}
+
+.std-form {
+  margin: 0px 50px;
+  padding-top: 80px;
+}
+
+.std-form li {
+  color: #000000;
+}
+
+.edit-form {
+  margin: 0px 50px;
+  padding-top: 80px;
+}
