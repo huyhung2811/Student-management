@@ -40,7 +40,7 @@ function ShowStd() {
                 <Card.Header style={{ backgroundColor: '#36ABFF', color: 'white' }}>
                     <Card.Title>Thông tin sinh viên</Card.Title>
                 </Card.Header>
-                <Card.Img style={{ float: "right", width: "150px", height: "150px" }} variant="top" src={user.avatar} />
+                <Card.Img style={{ float: "right", width: "150px", height: "150px" }} variant="top" src={user.avatar? user.avatar: "/avatar.jpg"} />
                 <Card.Body>
                     <Card.Title></Card.Title>
                     <Card.Text>

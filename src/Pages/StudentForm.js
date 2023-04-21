@@ -45,8 +45,8 @@ function AddStudent({ addUser }) {
       setErrors("Hãy nhập ngày sinh");
       return;
     }
-    if (!state.gender ?? "") {
-      setErrors("Hãy nhập giới tính");
+    if (state.gender===initState.gender) {
+      setErrors("Hãy chọn giới tính");
       return;
     }
     if (!state.address) {
@@ -57,12 +57,12 @@ function AddStudent({ addUser }) {
       setErrors("Hãy nhập email");
       return;
     }
-    if (!state.SchoolYear) {
-      setErrors("Hãy nhập năm học");
+    if (state.SchoolYear===initState.SchoolYear) {
+      setErrors("Hãy chọn năm học");
       return;
     }
-    if (!state.faculty) {
-      setErrors("Hãy nhập ngành");
+    if (state.faculty===initState.faculty) {
+      setErrors("Hãy chọn ngành");
       return;
     }
     if (state.CPA < 0 || state.CPA > 4) {
@@ -88,6 +88,14 @@ function AddStudent({ addUser }) {
     const file = e.target.files[0];
     if (file) {
       const imageUrl = URL.createObjectURL(file);
+      console.log(imageUrl);
+      dispatch({
+        type: "FILE_CHANGE",
+        payload: imageUrl,
+      });
+    } else {
+      const imageUrl = process.env.PUBLIC_URL + "/avatar.jpg";
+
       dispatch({
         type: "FILE_CHANGE",
         payload: imageUrl,
@@ -168,7 +176,7 @@ function AddStudent({ addUser }) {
               <Form.Control type="number" id="CPA" name="CPA" step="0.01" onChange={handleChange} value={state.CPA} />
             </Form.Group>
             <br />
-            {errors && <p>{errors}</p>}
+            {errors && <p style={{color: "red"}}>{errors}</p>}
             <Button variant="primary" type="submit">Create</Button>
           </Form>
         </Modal.Body>
